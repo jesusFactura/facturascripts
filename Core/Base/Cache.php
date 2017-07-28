@@ -19,6 +19,7 @@
 namespace FacturaScripts\Core\Base;
 
 use FacturaScripts\Core\Base\Cache\FileCache;
+use FacturaScripts\Core\Base\Cache\MemCache;
 
 /**
  * Class Cache
@@ -41,7 +42,7 @@ class Cache
     public function __construct($folder = '')
     {
         if (self::$engine === null) {
-            self::$engine = new FileCache($folder);
+            self::$engine = new MemCache();
         }
     }
 
